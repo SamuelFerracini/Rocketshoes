@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MdShoppingBasket } from 'react-icons/md';
 import { connect } from 'react-redux';
 import { Container, Cart } from './styles';
 import logo from '../../assets/images/logo.svg';
+import Animation from '../Animation';
+import basketAnimation from '../../assets/animations/basket.json';
 
 function Header({ cartSize }) {
   return (
@@ -11,12 +13,15 @@ function Header({ cartSize }) {
       <Link to="/">
         <img src={logo} alt="Rocketshoes" />
       </Link>
+
       <Cart to="/cart">
-        <div>
-          <strong>Meu carrinho</strong>
-          <span>{cartSize} itens</span>
+        <div style={{ marginRight: -10 }}>
+          <strong>Minha cesta</strong>
+          {cartSize === 0 ? <span>nenhum item</span> : null}
+          {cartSize === 1 ? <span>{cartSize} item</span> : null}
+          {cartSize > 1 ? <span>{cartSize} itens</span> : null}
         </div>
-        <MdShoppingBasket size={36} color="fff" />
+        <Animation animation={basketAnimation} size={100} />
       </Cart>
     </Container>
   );
