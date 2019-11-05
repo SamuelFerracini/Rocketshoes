@@ -10,20 +10,20 @@ function Header({ navigation, cartSize }) {
     <Wrapper>
       <Container>
         <Logo />
-        <BasketContainer onPress={() => navigation.navigate('Cart')}>
+        <BasketContainer onPress={console.tron.log('click')}>
           <Icon name="shopping-basket" color="#FFF" size={24} />
-          {/* <ItemCount>{cartSize || 0}</ItemCount> */}
+          <ItemCount>{cartSize || 0}</ItemCount>
         </BasketContainer>
       </Container>
     </Wrapper>
   );
 }
 
-// export default connect(
-//   state => ({
-//     cartSize: state.cart.length,
-//   }),
-//   null
-// )(Header);
+export default connect(
+  state => ({
+    cartSize: state.cart.length,
+  }),
+  null
+)(Header);
 
-export default Header;
+// export default Header;

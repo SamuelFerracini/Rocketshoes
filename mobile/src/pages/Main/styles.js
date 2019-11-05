@@ -1,8 +1,15 @@
 import styled from 'styled-components/native';
 import { darken } from 'polished';
+import colors from '../../styles/colors';
 
 export const Container = styled.View`
-  background: #000;
+  background: ${colors.dark};
+`;
+export const AnimationSpace = styled.View`
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding-top: 50%;
 `;
 
 export const Product = styled.View`
@@ -30,7 +37,7 @@ export const ProductPrice = styled.Text`
 `;
 
 export const AddButton = styled.TouchableOpacity`
-  background: #fff;
+  background: ${colors.primary};
   flex-direction: row;
   align-items: center;
   border-radius: 4px;
@@ -39,7 +46,7 @@ export const AddButton = styled.TouchableOpacity`
 
 export const ProductAmount = styled.View`
   padding: 12px;
-  background: ${darken(0.03, '#fff')};
+  background: ${darken(0.03, colors.primary)};
 
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
