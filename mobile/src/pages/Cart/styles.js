@@ -107,3 +107,8 @@ export const EmptyText = styled.Text`
   margin-top: 18px;
   margin-bottom: -90px;
 `;
+export const Teste = styled.View`
+  flex-direction: row;
+  flex: 1;
+  align-items: flex-start;
+`;
