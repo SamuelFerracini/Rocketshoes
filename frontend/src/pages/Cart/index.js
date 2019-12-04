@@ -117,7 +117,7 @@ export default function Cart() {
                 </tbody>
               </ProductTable>
               <footer>
-                <button type="button" onClick={() => finishShopping()}>
+                <button type="button" onClick={finishShopping}>
                   Finalizar Pedido
                 </button>
                 <Total>
